@@ -74,9 +74,8 @@ namespace MasterRename
             string CustomExt = ComboBoxExt.Text;
             if (!ComboBoxExt.Text.StartsWith(".")) CustomExt = Path.Combine(".", CustomExt);
 
-            if (ChoosedefaultExt.Checked) ext = file.Extension;
-            else ext = CustomExt;
-            return ext;
+            if (ChoosedefaultExt.Checked) return file.Extension;
+            return CustomExt;
         }
 
         private void ComboBoxExt_ChangeText(object sender, EventArgs e)   //Enable/disable the default extension to the change of custom extension textbox
